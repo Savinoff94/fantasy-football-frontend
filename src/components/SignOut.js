@@ -1,21 +1,17 @@
 import './SignOut.css'
 import {connect} from 'react-redux';
-import { loadUser } from '../redux/actions';
+import { logOut } from '../redux/actions';
+import React from 'react';
+import SignIn from './SignIn';
 
-const SignOut = (props) => {
-    props.loadUser({
-      user: {
-        id: '',
-        name: '',
-        email:'',
-        joined:''
-      },
-      token:null
-    })
-    props.history.push('/signin')
-    return(
-      <></>
-    )
+
+class SignOut extends React.Component {
+  render(){
+    this.props.logOut();
+  return(
+    <><SignIn/></>
+  )
+  }
 }
 
 const mapStateToProps = (state) => {
@@ -24,8 +20,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 return {
-    loadUser: (data) => dispatch(loadUser(data))
+    logOut: () => dispatch(logOut())
 }
 }
   
-  export default connect(mapStateToProps,mapDispatchToProps)(SignOut)
+export default connect(mapStateToProps,mapDispatchToProps)(SignOut)

@@ -44,21 +44,23 @@ class SignIn extends React.Component {
     return(
     <>
       <div id='containerForm'>
-        <h2>Sign In</h2>
-        <div id='formItem'>
-          <label htmlFor="email">Email</label>
-          <input type="email"
-                name="email" id="email"
-                onChange={this.onEmailChange} />
-        </div>
-        <div id='formItem'>
-          <label htmlFor="password">Password</label>
-          <input type="password"
-                name="password" id="password"
-                onChange={this.onPasswordChange} />
-        </div>
-        <div id='formItemButton'>
-          <button onClick={this.onSubmitSignIn}>Sign In</button>
+        <div id='subContainer'>
+          <h2>Sign In</h2>
+          <div id='formItem'>
+            <label htmlFor="email">Email</label>
+            <input type="email"
+                  name="email" id="email"
+                  onChange={this.onEmailChange} />
+          </div>
+          <div id='formItem'>
+            <label htmlFor="password">Password</label>
+            <input type="password"
+                  name="password" id="password"
+                  onChange={this.onPasswordChange} />
+          </div>
+          <div id='formItemButton'>
+            <button onClick={this.onSubmitSignIn}>Sign In</button>
+          </div>
         </div>
       </div>
     </>

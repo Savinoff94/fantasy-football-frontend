@@ -12,6 +12,7 @@ export const SAVE_PLAYER_TO_FRONTEND = 'SAVE_PLAYER_TO_FRONTEND'
 export const LOAD_USER = 'LOAD_USER'
 export const LOAD_LEADER_BOARD = 'LOAD_LEADER_BOARD'
 export const TEAM_INFO_CHART_DATA = 'TEAM_INFO_CHART_DATA' 
+export const LOG_OUT = 'LOG_OUT'
 // export const getSearchPlayerList = (number,position) => {
 //     return{
 //         type: SEARCH_PLAYER_LIST,
@@ -25,6 +26,11 @@ export const TEAM_INFO_CHART_DATA = 'TEAM_INFO_CHART_DATA'
 //     }
 // }
 
+export const logOut = () => {
+    return {
+        type: LOG_OUT,
+    }
+}
 
 export const closePlayerInfo = () => {
     return {

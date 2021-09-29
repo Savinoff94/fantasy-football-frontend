@@ -47,6 +47,7 @@ class Register extends React.Component {
     return (
       <>
       <div id='containerForm'>
+        <div id='subContainer'>
         <h2>Register</h2>
         <div id='formItem'>
           <label htmlFor="name">Name</label>
@@ -70,6 +71,7 @@ class Register extends React.Component {
           <input type="submit"
                 onClick={this.onSubmitSignIn}
                 value="Register"/>
+        </div>
         </div>
       </div>
       </>

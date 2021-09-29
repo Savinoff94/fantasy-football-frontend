@@ -1,4 +1,4 @@
-import {TEAM_INFO_CHART_DATA,LOAD_LEADER_BOARD,LOAD_USER,SAVE_PLAYER_TO_FRONTEND,CLEAR_PLAYER_TO_PRESENT,OPEN_PLAYER_INFO,FILTER_INPUT,CURRENT_PAGE_ONE,FETCH_PLAYERS,FILTER_PLAYERS,PLAYERsearch_LEADERBOARDS_TOGGLE,TEAMinfo_PLAYERinfo_TOGGLE,NEXT_PAGE} from './actions';
+import {LOG_OUT,TEAM_INFO_CHART_DATA,LOAD_LEADER_BOARD,LOAD_USER,SAVE_PLAYER_TO_FRONTEND,CLEAR_PLAYER_TO_PRESENT,OPEN_PLAYER_INFO,FILTER_INPUT,CURRENT_PAGE_ONE,FETCH_PLAYERS,FILTER_PLAYERS,PLAYERsearch_LEADERBOARDS_TOGGLE,TEAMinfo_PLAYERinfo_TOGGLE,NEXT_PAGE} from './actions';
 
 let initState = {
     teamInfoChartData:'',
@@ -38,6 +38,8 @@ export const reducer = (state=initState, action={}) => {
     switch(action.type){
         // case SEARCH_PLAYER_LIST:
         //     return{...state,whichPositionLookFor:action.payload[0], playerSearchOrLeaderBoards:action.payload[1]}
+        case LOG_OUT:
+            return{...initState}
         case TEAM_INFO_CHART_DATA:
             return{...state,teamInfoChartData:action.payload}
         case LOAD_LEADER_BOARD:

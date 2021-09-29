@@ -19,7 +19,7 @@ class App extends React.Component {
       <Link to='/' style={{margin:'5px'}}>Main</Link>
       <Link to='/register' style={{margin:'5px'}}>Register</Link>
       <Link to='/signin' style={{margin:'5px'}}>Sign in</Link>
-      <Link to='/sibnout' style={{margin:'5px'}}>Sign Out</Link>
+      <Link to='/signout' style={{margin:'5px'}}>Sign Out</Link>
       </nav>
       <Switch>
         <Route path='/' component={withAuth(Main,this.props.token)} exact />
