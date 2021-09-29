@@ -1,0 +1,49 @@
+/* #TeamInfo{
+    height: 100%;
+    width: 100%;
+    grid-area: InfoBar;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: solid black 2px;
+} */
+
+#TeamInfo{
+    height: 95%;
+    display: flex;
+    width: 100%;
+    grid-area: InfoBar;
+    justify-content: center;
+    align-content: center;
+    /* background-image: url('logo1.png');
+    background-size: contain;
+    background-position-x: left;   
+    background-repeat: no-repeat;  */
+    /* position: relative;cdcdc
+    top: 70px; */
+}
+
+#barContainer{
+    align-self: center;
+    height:338px; 
+    /* height: 400px; */
+    width:600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+canvas{
+    object-fit: cover;
+    width: 100%;
+    
+}
+
+h1{
+    margin: 0;
+    padding: 0;
+}

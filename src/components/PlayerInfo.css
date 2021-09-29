@@ -1,0 +1,64 @@
+/* #PlayerInfo{
+    width: 100%;
+    height: 100%;
+    grid-area: InfoBar;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+} */
+
+#PlayerInfo{
+    height: 95%;
+    display: flex;
+    width: 100%;
+    grid-area: InfoBar;
+    justify-content: center;
+    align-content: center;
+}
+
+#chartContainer{
+    align-self: center;
+    height:338px; 
+    width:600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+canvas{
+    object-fit: cover;
+    width: 100%;
+}
+h1{
+    margin: 0;
+    padding: 0;
+}
+
+/* .labels{
+    width: 100%;
+}
+
+#exactChart{
+    
+    height:100%; 
+    width:40%;
+    left: 1px;
+    top: 1px;
+    margin: 0;
+    padding: 0;
+} */
+.labels{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+

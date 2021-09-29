@@ -1,0 +1,35 @@
+#Field{
+    /* border: solid black 1px; */
+    grid-area: Field;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    background-image: url('https://cdn.pixabay.com/photo/2019/07/07/06/29/soccer-field-4321814_960_720.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fieldLayer{
+    /* border: solid black 1px; */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#img_field{
+    position: absolute;
+    top: 20px;
+    left: 468px;
+    height: 520px;
+    width: 1365px;
+    z-index: -1;
+}
+
+.midfielder{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
