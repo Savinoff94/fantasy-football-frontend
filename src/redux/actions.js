@@ -100,7 +100,7 @@ export const fetchPlayers = (number,position,page) => (dispatch) => {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "api-football-v1.p.rapidapi.com",
-		"x-rapidapi-key": "50969f14d2msh82dec1198045588p14141ajsnb8e0ca0d164b"
+		"x-rapidapi-key": KEY
 	}
     })
     .then(response => response.json())
