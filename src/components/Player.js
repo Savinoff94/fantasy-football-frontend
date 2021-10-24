@@ -17,8 +17,8 @@ const Player = (props) => {
             body: JSON.stringify({
                 email:props.user.email,
                 player_index:number,
-                player_id:data.player.id,
-                team_id:data.statistics[0].team.id
+                player_id:data.data.player.id,
+                team_id:data.data.statistics[0].team.id
             })
         })
         .catch((e) => {
@@ -32,17 +32,17 @@ const Player = (props) => {
     return(
         <div id='Player'>
             <div className='player_rep_face'>
-            <h3>{info.player.name}</h3>
-            <img width='60px' height='60px' src={info.player.photo}/>
+            <h3>{info.data.player.name}</h3>
+            <img width='60px' height='60px' src={info.data.player.photo}/>
             </div>
             
             <div className='player_rep_team'>
-            <span>{info.statistics[0].team.name}</span>
-            <img id='team_icon' width='45px' height='45px' src={info.statistics[0].team.logo}/>
+            <span>{info.data.statistics[0].team.name}</span>
+            <img id='team_icon' width='45px' height='45px' src={info.data.statistics[0].team.logo}/>
             </div>
             <div className='player_rep_stats'>
-            <p>Appearences: {info.statistics[0].games.appearences === null? 0:info.statistics[0].games.appearences}</p>
-            <p>Rating: {info.statistics[0].games.rating ===null? 0:info.statistics[0].games.rating}</p>
+            <p>Appearences: {info.data.statistics[0].games.appearences === null? 0:info.data.statistics[0].games.appearences}</p>
+            <p>Rating: {info.data.statistics[0].games.rating ===null? 0:Math.round(info.data.statistics[0].games.rating * 10)/10}</p>
             </div>
             <div id='buttonsPlayer'>
             <button onClick={(e) => props.openPlayerInfo(filteredPlayers[e.target.value])} value={index}>Info</button>

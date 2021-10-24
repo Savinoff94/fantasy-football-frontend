@@ -5,7 +5,7 @@ import {loadLeaderBoard} from '../redux/actions'
 
 class LeaderBoards extends React.Component{
     componentDidMount(){
-        console.log('leader board did mount')
+        // console.log('leader board did mount')
         this.props.loadLeaderBoard();
     }
     render(){
@@ -23,7 +23,7 @@ class LeaderBoards extends React.Component{
                     {
                         this.props.leaderBoard.map((item) => {
                             return(
-                                <h2>{item.email} {item.points}</h2>
+                                <h2>{item.email} {Math.round(item.points * 10)/10}</h2>
                             )
                         })
                     }

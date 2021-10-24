@@ -46,77 +46,24 @@ export const closePlayerSearch = () => {
     }
 }
 
-// export const fetchPlayers = (position,page) => (dispatch) => {
-//     fetch(`https://api-football-v1.p.rapidapi.com/v3/players?league=39&season=2021&page=${page}`, {
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-host": "api-football-v1.p.rapidapi.com",
-// 		"x-rapidapi-key": "50969f14d2msh82dec1198045588p14141ajsnb8e0ca0d164b"
-// 	}
-//     })
-//     .then(response => response.json())
-//     .then(response =>{
-//         console.log("response", response);
-//         const data = response.response.filter((item) => item.statistics[0].games.position === position);
-//         data.sort((a,b) => b.statistics[0].games.rating - a.statistics[0].games.rating);
-//         dispatch({type:FETCH_PLAYERS, payload:[data,response.paging.total]})
-//     })
-//     .catch(err => {
-//         console.error(err);
-//     });
-// }
-
-// export const fetchPlayers = (number,position,page) => (dispatch) => {
-//     console.log(`https://api-football-v1.p.rapidapi.com/v3/players?league=39&season=2021&page=${page}`)
-//     // fetch(`https://api-football-v1.p.rapidapi.com/v3/players?league=39&season=2021&page=${page}`, {
-// 	// "method": "GET",
-// 	// "headers": {
-// 	// 	"x-rapidapi-host": "api-football-v1.p.rapidapi.com",
-// 	// 	"x-rapidapi-key": "50969f14d2msh82dec1198045588p14141ajsnb8e0ca0d164b"
-// 	// }
-//     // })
-//     // .then(response => response.json())
-//     // .then(response =>{
-//     //     console.log("response", response);
-//     //     const data = response.response.filter((item) => item.statistics[0].games.position === position);
-//     //     data.sort((a,b) => b.statistics[0].games.rating - a.statistics[0].games.rating);
-//     //     dispatch({type:FETCH_PLAYERS, payload:[data,response.paging.total,number,position]})
-//     // })
-//     // .catch(err => {
-//     //     console.error(err);
-//     // });
-//     return {
-//         type: FETCH_PLAYERS,
-//         payload: [[],37,number,position]
-//     }
-// }
-export const fetchPlayers = (number,position,page) => (dispatch) => {
-    // console.log('number',number);
-    // console.log('position',position);
-    // console.log('page',page);
-    // console.log('HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH')
-    // console.log(`https://api-football-v1.p.rapidapi.com/v3/players?league=39&season=2021&page=${page}`)
-    fetch(`https://api-football-v1.p.rapidapi.com/v3/players?league=39&season=2021&page=${page}`, {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "api-football-v1.p.rapidapi.com",
-		"x-rapidapi-key": KEY
-	}
+export const fetchPlayers = (number,position) => (dispatch) => {
+    console.log('trying to fetch player base')
+    fetch('http://localhost:4000/playerstochoose', {
+        method: 'POST',
+        headers: {
+            'Content-type':'application/json'
+        },
+        body:JSON.stringify({
+            position
+        })
     })
     .then(response => response.json())
     .then(response =>{
-        console.log("response", response);
-        const data = response.response.filter((item) => item.statistics[0].games.position === position);
-        data.sort((a,b) => b.statistics[0].games.rating - a.statistics[0].games.rating);
-        dispatch({type:FETCH_PLAYERS, payload:[data,response.paging.total,number,position]})
+        dispatch({type:FETCH_PLAYERS, payload:[response.data,number,position]})
     })
     .catch(err => {
         console.error(err);
     });
-    // return {
-    //     type: FETCH_PLAYERS,
-    //     payload: [[],37,number,position]
-    // }
 }
 
 export const nextPage = () => {

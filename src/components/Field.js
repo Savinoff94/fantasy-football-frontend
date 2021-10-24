@@ -18,9 +18,11 @@ class Field extends React.Component {
         .then(response => response.json())
         .then(response => {
             const {data} = response;
+            console.log("HUI", data)
             const playerNames = [];
             const playerPoints = [];
             const cloneTeam = JSON.parse(JSON.stringify(this.props.team))
+            console.log('cloneTeam',cloneTeam)
             Object.keys(cloneTeam).forEach(item => {
                 console.log(item)
                 if(cloneTeam[item] === ''){
@@ -29,19 +31,19 @@ class Field extends React.Component {
                 }
             })
             data.forEach(item => {
-                console.log('playerNames',playerNames)
-                console.log('playerNames',playerNames)
+                // console.log('playerNames',playerNames)
                 Object.keys(cloneTeam).forEach(player => {
-                    console.log("item['player_id']",item['player_id'])
-                    console.log("cloneTeam[player][player.id]",cloneTeam[player].player.id)
-                    if(item['player_id'] === cloneTeam[player].player.id){
-                        playerNames.push(cloneTeam[player]['player'].name)
+                    // console.log("item['player_id']",item['player_id'])
+                    // console.log("cloneTeam[player][player.id]",cloneTeam[player].data.player.id)
+                    
+                    if(item['player_id'] === cloneTeam[player].data.player.id){
+                        playerNames.push(cloneTeam[player].data.player.name)
                         playerPoints.push(item['earned_points'])
                         delete cloneTeam[player];
                     }
                 })
             })
-            console.log('!!!!)!)!)!!)!)!)!)!)', playerNames);
+            // console.log('!!!!)!)!)!!)!)!)!)!)', playerNames);
             this.props.loadTeamInfo({
                 labels: playerNames,
                 datasets: [{
@@ -65,10 +67,10 @@ class Field extends React.Component {
                     borderWidth: 0.5
                     }],
             })
-            console.log('playerNames',playerNames)
-            console.log('playerPoints',playerPoints)
-            console.log('cloneTeam',cloneTeam)
-            console.log('teamInfo list', response)
+            // console.log('playerNames',playerNames)
+            // console.log('playerPoints',playerPoints)
+            // console.log('cloneTeam',cloneTeam)
+            // console.log('teamInfo list', response)
         })
         .catch((e) => console.log(e))
     }

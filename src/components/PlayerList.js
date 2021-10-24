@@ -7,19 +7,11 @@ import Player from './Player';
 class PlayerList extends React.Component {
     changeHandler = (arg) => {
         const tmp = this.props.playersList.filter((item) => {
-            return arg.toLowerCase() === item.player.firstname.toLowerCase().split(" ")[0].substr(0,arg.length) || arg.toLowerCase() === item.player.lastname.toLowerCase().split(" ")[0].substr(0,arg.length)
+            return arg.toLowerCase() === item.data.player.firstname.toLowerCase().split(" ")[0].substr(0,arg.length) || arg.toLowerCase() === item.data.player.lastname.toLowerCase().split(" ")[0].substr(0,arg.length)
         })
         this.props.filterInput(tmp);
     }
-    clickHandler = () => {
-        if(this.props.pageCurrentPlayers == this.props.pagesPlayers){
-            return null
-        }else{
-            this.props.nextPage();
-            // console.log('this.props.pageCurrentPlayers',this.props.pageCurrentPlayers)
-            this.props.fetchPlayers(this.props.whichPositionLookFor.number,this.props.whichPositionLookFor.position,this.props.pageCurrentPlayers)
-        }
-    }
+
     render(){
         return(
             <div id='PlayerList'>
@@ -28,7 +20,6 @@ class PlayerList extends React.Component {
                     <button onClick={this.props.closePlayerSearch} id='playerListClose'>X</button>
                 </div>
                 {this.props.filteredPlayers.length === 0? null: this.props.filteredPlayers.map((item,i) => <Player info={item} index={i}/>)}
-                <button id='nextPage' onClick={this.clickHandler}>Next page</button>
             </div>
         )
 

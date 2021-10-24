@@ -36,8 +36,6 @@ let initState = {
 
 export const reducer = (state=initState, action={}) => {
     switch(action.type){
-        // case SEARCH_PLAYER_LIST:
-        //     return{...state,whichPositionLookFor:action.payload[0], playerSearchOrLeaderBoards:action.payload[1]}
         case LOG_OUT:
             return{...initState}
         case TEAM_INFO_CHART_DATA:
@@ -67,7 +65,7 @@ export const reducer = (state=initState, action={}) => {
         case CURRENT_PAGE_ONE:
             return{...state, pageCurrentPlayers:action.payload}
         case FETCH_PLAYERS:
-            return{...state,filteredPlayers:action.payload[0],playersList:action.payload[0], playerSearchOrLeaderBoards:'playerSearch',pagesPlayers:action.payload[1],whichPositionLookFor:{number:action.payload[2],position:action.payload[3]}}
+            return{...state,filteredPlayers:action.payload[0],playersList:action.payload[0], playerSearchOrLeaderBoards:'playerSearch',whichPositionLookFor:{number:action.payload[1],position:action.payload[2]}}
         case FILTER_PLAYERS:
             return{...state,filteredPlayers:action.payload}
         case PLAYERsearch_LEADERBOARDS_TOGGLE:

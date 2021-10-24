@@ -25,7 +25,7 @@ class PlayerIcon extends React.Component {
             })
             .then(data => {
                 console.log('data',data)
-                this.props.savePlayerToFrontEnd(this.props.number,data.data.response[0])
+                this.props.savePlayerToFrontEnd(this.props.number,data)
             })
             .catch(e => {
             console.log(e);
@@ -54,7 +54,7 @@ class PlayerIcon extends React.Component {
         }else{
             return (
                 <div>
-                    <img id='playerImg' onClick={this.clickHandler} src={this.props.team[this.props.number].player.photo}/>
+                    <img id='playerImg' onClick={this.clickHandler} src={this.props.team[this.props.number].data.player.photo}/>
                 </div>
             ) 
         }
